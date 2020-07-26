@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add node-module-intellisense
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add @babel/preset-env --dev
 
 PATH: 
   /Users/a.zakaria/development/flutter/bin:/usr/local/opt/ruby/bin:/Users/a.zakaria/bin:/usr/local/bin:/Users/a.zakaria/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/a.zakaria/Downloads/development/flutter/bin:/Library/Apple/usr/bin:/Users/a.zakaria/development/flutter/bin:/usr/local/opt/ruby/bin:/Users/a.zakaria/bin:/Users/a.zakaria/.npm-packages/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Users/a.zakaria/.npm-packages/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
@@ -14,17 +14,12 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/node-module-intellisense: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
-      at Request.emit (events.js:310:20)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
-      at Request.emit (events.js:310:20)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
-      at Object.onceWrapper (events.js:416:28)
-      at IncomingMessage.emit (events.js:322:22)
-      at endReadableNT (_stream_readable.js:1187:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  SyntaxError: /Users/a.zakaria/Documents/GraphQl  course/Build a Twitter Clone with Apollo Graphql & React-Native/mytestapp/server/package.json: Unexpected token } in JSON at position 473
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -40,9 +35,11 @@ npm manifest:
       "body-parser": "^1.19.0",
       "cross-env": "^7.0.2",
       "express": "^4.17.1",
+      "express-graphql": "^0.11.0",
+      "faker": "^4.1.0",
       "graph-tools": "^0.1.2",
       "graphql": "^15.3.0",
-      "mongoose": "^5.9.25"
+      "mongoose": "^5.9.25",
     },
     "devDependencies": {}
   }
@@ -1122,7 +1119,7 @@ Lockfile:
     dependencies:
       tslib "^1.9.3"
   
-  accepts@^1.3.5, accepts@~1.3.7:
+  accepts@^1.3.5, accepts@^1.3.7, accepts@~1.3.7:
     version "1.3.7"
     resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"
     integrity sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU/fjRHyEp+PEfEPY0R3WCwAGVOtauxh1hOxNgIf5bv7dQpA==
@@ -1452,7 +1449,7 @@ Lockfile:
     dependencies:
       safe-buffer "5.1.2"
   
-  content-type@~1.0.4:
+  content-type@^1.0.4, content-type@~1.0.4:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
     integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
@@ -1652,6 +1649,16 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
     integrity sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==
   
+  express-graphql@^0.11.0:
+    version "0.11.0"
+    resolved "https://registry.yarnpkg.com/express-graphql/-/express-graphql-0.11.0.tgz#48089f0d40074d7783c65ff86dd9cae95afea2ef"
+    integrity sha512-IMYmF2aIBKKfo8c+EENBNR8FAy91QHboxfaHe1omCyb49GJXsToUgcjjIF/PfWJdzn0Ofp6JJvcsODQJrqpz2g==
+    dependencies:
+      accepts "^1.3.7"
+      content-type "^1.0.4"
+      http-errors "1.8.0"
+      raw-body "^2.4.1"
+  
   express@^4.17.1:
     version "4.17.1"
     resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -1687,6 +1694,11 @@ Lockfile:
       type-is "~1.6.18"
       utils-merge "1.0.1"
       vary "~1.1.2"
+  
+  faker@^4.1.0:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/faker/-/faker-4.1.0.tgz#1e45bbbecc6774b3c195fad2835109c6d748cc3f"
+    integrity sha1-HkW7vsxndLPBlfrSg1EJxtdIzD8=
   
   fast-json-stable-stringify@^2.0.0:
     version "2.1.0"
@@ -1851,18 +1863,7 @@ Lockfile:
       statuses ">= 1.5.0 < 2"
       toidentifier "1.0.0"
   
-  http-errors@^1.7.3:
-    version "1.8.0"
-    resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.0.tgz#75d1bbe497e1044f51e4ee9e704a62f28d336507"
-    integrity sha512-4I8r0C5JDhT5VkvI47QktDW75rNlGVsUf/8hzjCC/wkWI/jdTRmBb9aI7erSG82r1bjKY3F6k28WnsVxB1C73A==
-    dependencies:
-      depd "~1.1.2"
-      inherits "2.0.4"
-      setprototypeof "1.2.0"
-      statuses ">= 1.5.0 < 2"
-      toidentifier "1.0.0"
-  
-  http-errors@~1.7.2:
+  http-errors@1.7.3, http-errors@~1.7.2:
     version "1.7.3"
     resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.3.tgz#6c619e4f9c60308c38519498c14fbb10aacebb06"
     integrity sha512-ZTTX0MWrsQ2ZAhA1cejAwDLycFsd7I7nVtnkT3Ol0aqodaKW+0CTZDQ1uBv5whptCnc8e8HeRRJxRs0kmm/Qfw==
@@ -1870,6 +1871,17 @@ Lockfile:
       depd "~1.1.2"
       inherits "2.0.4"
       setprototypeof "1.1.1"
+      statuses ">= 1.5.0 < 2"
+      toidentifier "1.0.0"
+  
+  http-errors@1.8.0, http-errors@^1.7.3:
+    version "1.8.0"
+    resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.0.tgz#75d1bbe497e1044f51e4ee9e704a62f28d336507"
+    integrity sha512-4I8r0C5JDhT5VkvI47QktDW75rNlGVsUf/8hzjCC/wkWI/jdTRmBb9aI7erSG82r1bjKY3F6k28WnsVxB1C73A==
+    dependencies:
+      depd "~1.1.2"
+      inherits "2.0.4"
+      setprototypeof "1.2.0"
       statuses ">= 1.5.0 < 2"
       toidentifier "1.0.0"
   
@@ -2299,6 +2311,16 @@ Lockfile:
       iconv-lite "0.4.24"
       unpipe "1.0.0"
   
+  raw-body@^2.4.1:
+    version "2.4.1"
+    resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.1.tgz#30ac82f98bb5ae8c152e67149dac8d55153b168c"
+    integrity sha512-9WmIKF6mkvA0SLmA2Knm9+qj89e+j1zqgyn8aXGd7+nAduPoqgI9lO57SAZNn/Byzo5P7JhXTyg9PzaJbH73bA==
+    dependencies:
+      bytes "3.1.0"
+      http-errors "1.7.3"
+      iconv-lite "0.4.24"
+      unpipe "1.0.0"
+  
   readable-stream@^2.3.5:
     version "2.3.7"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.7.tgz#1eca1cf711aef814c04f62252a36a62f6cb23b57"
@@ -2324,7 +2346,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.1.tgz#cad92ad8e6b591773485fbe05a485caf4f457e6f"
     integrity sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
   
-  regenerator-runtime@^0.13.4:
+  regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
     version "0.13.7"
     resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
     integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
