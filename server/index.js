@@ -1,13 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-import "./config/db";
-import constants from "./config/constants";
-import { typeDefs } from "./graphql/schema";
-import {resolvers} from "./graphql/resolvers";
+import "./src/config/db";
+import constants from "./src/config/constants";
+import { typeDefs } from "./src/graphql/schema";
+import {resolvers} from "./src/graphql/resolvers";
 import { ApolloServer } from "apollo-server-express";
-import mocks from "./mocks";
+import mocks from "./src/mocks";
 const app = express();
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 const server = new ApolloServer({ typeDefs, resolvers });
 server.applyMiddleware({ app, path: `${constants.GRAPHQL_PATH}` });
 mocks().then(() => {
