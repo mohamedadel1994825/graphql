@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add @babel/preset-env --dev
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add qraphql -date
 
 PATH: 
   /Users/a.zakaria/development/flutter/bin:/usr/local/opt/ruby/bin:/Users/a.zakaria/bin:/usr/local/bin:/Users/a.zakaria/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/a.zakaria/Downloads/development/flutter/bin:/Library/Apple/usr/bin:/Users/a.zakaria/development/flutter/bin:/usr/local/opt/ruby/bin:/Users/a.zakaria/bin:/Users/a.zakaria/.npm-packages/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Users/a.zakaria/.npm-packages/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/a.zakaria/Documents/GraphQl  course/Build a Twitter Clone with Apollo Graphql & React-Native/mytestapp/server/package.json: Unexpected token } in JSON at position 473
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
-      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/qraphql: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
+      at Request.emit (events.js:310:20)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
+      at Request.emit (events.js:310:20)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:416:28)
+      at IncomingMessage.emit (events.js:322:22)
+      at endReadableNT (_stream_readable.js:1187:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -31,6 +36,7 @@ npm manifest:
       "@babel/core": "^7.10.5",
       "@babel/preset-env": "^7.10.4",
       "@babel/register": "^7.10.5",
+      "apollo-server": "^2.16.0",
       "apollo-server-express": "^2.16.0",
       "body-parser": "^1.19.0",
       "cross-env": "^7.0.2",
@@ -40,6 +46,7 @@ npm manifest:
       "graph-tools": "^0.1.2",
       "graphql": "^15.3.0",
       "mongoose": "^5.9.25",
+      "regenerator-runtime": "^0.13.7"
     },
     "devDependencies": {}
   }
@@ -1286,6 +1293,17 @@ Lockfile:
       apollo-server-caching "^0.5.2"
       apollo-server-env "^2.4.5"
   
+  apollo-server@^2.16.0:
+    version "2.16.0"
+    resolved "https://registry.yarnpkg.com/apollo-server/-/apollo-server-2.16.0.tgz#fa30e29b78e8cb70b2c81d0f7b96953beb3d4baf"
+    integrity sha512-zbEe0FSqatqE6bmIfq/o1/Hsqc596ZOwZM/L8Ttwa4ucQ1ybqf1ZejSYu6ehFEj1G6rOBY1ttVKkIllcErK4GQ==
+    dependencies:
+      apollo-server-core "^2.16.0"
+      apollo-server-express "^2.16.0"
+      express "^4.0.0"
+      graphql-subscriptions "^1.0.0"
+      graphql-tools "^4.0.0"
+  
   apollo-tracing@^0.11.1:
     version "0.11.1"
     resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.11.1.tgz#3e3a4ce4b21e57dcc57b10bbd539db243b752606"
@@ -1659,7 +1677,7 @@ Lockfile:
       http-errors "1.8.0"
       raw-body "^2.4.1"
   
-  express@^4.17.1:
+  express@^4.0.0, express@^4.17.1:
     version "4.17.1"
     resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
     integrity sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g==

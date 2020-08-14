@@ -1,5 +1,7 @@
 import {TweetResolvers} from './tweet-resolver';
+import GraphQLDate from 'graphql-date';
 export const resolvers={
+    Date:GraphQLDate,
     Query:{
         getTweet:TweetResolvers.getTweet,
         getTweets:TweetResolvers.getTweets,
