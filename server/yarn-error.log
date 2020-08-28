@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add qraphql -date
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add bcrypt-nodejs
 
 PATH: 
   /Users/a.zakaria/development/flutter/bin:/usr/local/opt/ruby/bin:/Users/a.zakaria/bin:/usr/local/bin:/Users/a.zakaria/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/a.zakaria/Downloads/development/flutter/bin:/Library/Apple/usr/bin:/Users/a.zakaria/development/flutter/bin:/usr/local/opt/ruby/bin:/Users/a.zakaria/bin:/Users/a.zakaria/.npm-packages/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Users/a.zakaria/.npm-packages/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/a.zakaria/Library/Android/sdk/emulator:/Users/a.zakaria/Library/Android/sdk/tools:/Users/a.zakaria/Library/Android/sdk/tools/bin:/Users/a.zakaria/Library/Android/sdk/platform-tools:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
@@ -14,17 +14,11 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/qraphql: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
-      at Request.emit (events.js:310:20)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
-      at Request.emit (events.js:310:20)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
-      at Object.onceWrapper (events.js:416:28)
-      at IncomingMessage.emit (events.js:322:22)
-      at endReadableNT (_stream_readable.js:1187:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: unable to verify the first certificate
+      at TLSSocket.onConnectSecure (_tls_wrap.js:1474:34)
+      at TLSSocket.emit (events.js:310:20)
+      at TLSSocket._finishInit (_tls_wrap.js:917:8)
+      at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:687:12)
 
 npm manifest: 
   {
@@ -45,6 +39,7 @@ npm manifest:
       "faker": "^4.1.0",
       "graph-tools": "^0.1.2",
       "graphql": "^15.3.0",
+      "graphql-date": "^1.0.3",
       "mongoose": "^5.9.25",
       "regenerator-runtime": "^0.13.7"
     },
@@ -1327,6 +1322,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
     integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
   
+  assert-err@^1.0.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/assert-err/-/assert-err-1.1.0.tgz#c05062799a1d97d3f5eaa258e3242aab499fc8ef"
+    integrity sha1-wFBieZodl9P16qJY4yQqq0mfyO8=
+    dependencies:
+      escape-string-regexp "^1.0.5"
+      object-assign "^4.1.0"
+  
   async-limiter@~1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
@@ -1799,6 +1802,13 @@ Lockfile:
       "@types/lodash" "^4.14.91"
       lodash "^4.17.4"
   
+  graphql-date@^1.0.3:
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/graphql-date/-/graphql-date-1.0.3.tgz#31ce05ae40ed8c8ceb040364060109771e712e91"
+    integrity sha1-Mc4FrkDtjIzrBANkBgEJdx5xLpE=
+    dependencies:
+      assert-err "^1.0.0"
+  
   graphql-extensions@^0.12.4:
     version "0.12.4"
     resolved "https://registry.yarnpkg.com/graphql-extensions/-/graphql-extensions-0.12.4.tgz#c0aa49a20f983a2da641526d1e505996bd2b4188"
@@ -2188,7 +2198,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.60.tgz#6948bdfce8286f0b5d0e5a88e8384e954dfe7084"
     integrity sha512-gsO4vjEdQaTusZAEebUWp2a5d7dF5DYoIpDG7WySnk7BuZDW+GPpHXoXXuYawRBr/9t5q54tirPz79kFIWg4dA==
   
-  object-assign@^4:
+  object-assign@^4, object-assign@^4.1.0:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
     integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
